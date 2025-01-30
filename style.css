@@ -1,0 +1,137 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+header {
+  margin-bottom: 200px;
+}
+
+body {
+  max-width: 1400px;
+  margin: 0px auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/******** Forside ********/
+
+.category_list_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.category_list_container a {
+  color: white;
+  text-decoration: none;
+  background-color: #006d6f;
+  text-align: center;
+  padding: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 679px) {
+  .category_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .category_list_container a {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-right: 0px;
+    margin-left: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  .category_list_container a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #01999c;
+    transform: scale(1.2);
+    transition-duration: 1.2s;
+  }
+}
+
+/******** Produktliste ********/
+
+.produktliste_container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.produkt_card {
+  background-color: lightgray;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.discount {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: red;
+}
+
+.discount-tag {
+  background-color: yellow;
+  justify-self: end;
+}
+
+.soldout img {
+  filter: grayscale(1);
+  opacity: 50%;
+}
+
+.soldout-tag {
+  position: absolute;
+  padding: 20px;
+  background-color: gray;
+  border-radius: 0px 0px 10px 0px;
+  z-index: 1;
+}
+
+@media screen and (min-width: 679px) {
+  .produktliste_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+  }
+
+  .produkt_card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 6;
+  }
+
+  .bottom_link {
+    grid-row: -1;
+    font-weight: bold;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .bottom_link:hover {
+    color: orange;
+    transition-duration: 0.2s;
+  }
+}
