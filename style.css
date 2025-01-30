@@ -11,13 +11,23 @@ img {
   display: block;
 }
 
+/******* basic layout *******/
+
 header {
-  margin-bottom: 200px;
+  margin-bottom: 20px;
+  max-width: 200px;
 }
 
 body {
+  min-height: 100vh;
   max-width: 1400px;
-  margin: 0px auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+footer {
+  margin-top: 30px;
 }
 
 a {
@@ -134,4 +144,16 @@ a {
     color: orange;
     transition-duration: 0.2s;
   }
+}
+
+/********* Produkt *********/
+.grid_1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+form {
+  display: grid;
+  grid-template-rows: subgrid;
+  gap: 10px;
 }
