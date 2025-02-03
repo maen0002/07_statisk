@@ -35,6 +35,8 @@ a {
   color: black;
 }
 
+.class
+
 /******** Forside ********/
 
 .category_list_container {
@@ -100,17 +102,33 @@ a {
   color: red;
 }
 
+.discount-null {
+  display: none;
+}
+
 .discount-tag {
   background-color: yellow;
   justify-self: end;
 }
 
-.soldout img {
+.discount-tag-null {
+  display: none;
+}
+
+.null {
+  display: none;
+}
+
+.soldout1 img {
   filter: grayscale(1);
   opacity: 50%;
 }
 
-.soldout-tag {
+.soldout-tag0 {
+  display: none;
+}
+
+.soldout-tag1 {
   position: absolute;
   padding: 20px;
   background-color: gray;
@@ -147,7 +165,7 @@ a {
 }
 
 /********* Produkt *********/
-.grid_1-1 {
+.produktet {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
