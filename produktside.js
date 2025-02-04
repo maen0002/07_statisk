@@ -1,4 +1,13 @@
-let productId = 1163;
+// Finder alt efter ?
+const queryString = window.location.search;
+
+//Finder en bestemt parameter efter ?
+const urlParams = new URLSearchParams(queryString);
+
+//Henter color parameteren
+const productId = urlParams.get("product_id");
+console.log("product_id", productId);
+
 let productContainer = document.querySelector(".produktet");
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
@@ -6,7 +15,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
     productContainer.innerHTML = `
                 <div class="soldout${data.soldout}">
                 <p class="soldout-tag${data.soldout}">Sold Out</p>
-                <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="">
+                <img src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp" alt="">
             </div>
             <div class="product_information">
                 <h2>${data.productdisplayname}</h2>
