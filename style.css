@@ -15,7 +15,8 @@ img {
 
 header {
   margin-bottom: 20px;
-  max-width: 200px;
+  max-width: 300px;
+  margin-top: 10px;
 }
 
 body {
@@ -33,10 +34,16 @@ footer {
 a {
   text-decoration: none;
   color: black;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.class
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+h2 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
 /******** Forside ********/
 
 .category_list_container {
@@ -134,6 +141,16 @@ a {
   background-color: gray;
   border-radius: 0px 0px 10px 0px;
   z-index: 1;
+}
+
+button {
+  background-color: lightgray;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+}
+
+button:hover {
+  background-color: gray;
 }
 
 @media screen and (min-width: 679px) {
