@@ -106,6 +106,10 @@ a {
   display: none;
 }
 
+.hide {
+  display: none;
+}
+
 .discount-tag {
   background-color: yellow;
   justify-self: end;
@@ -115,11 +119,7 @@ a {
   display: none;
 }
 
-.null {
-  display: none;
-}
-
-.soldout1 img {
+.soldout img {
   filter: grayscale(1);
   opacity: 50%;
 }
@@ -128,7 +128,7 @@ a {
   display: none;
 }
 
-.soldout-tag1 {
+.soldout-tag {
   position: absolute;
   padding: 20px;
   background-color: gray;

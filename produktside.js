@@ -13,17 +13,17 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => {
     productContainer.innerHTML = `
-                <div class="soldout${data.soldout}">
-                <p class="soldout-tag${data.soldout}">Sold Out</p>
+                <div class="${data.soldout && "soldout"}">
+                <p class="${data.soldout ? "soldout-tag" : "hide"}">Sold Out</p>
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp" alt="">
             </div>
             <div class="product_information">
                 <h2>${data.productdisplayname}</h2>
                 <p class="color">${data.basecolour}</p>
                 <p class="price">${data.price},-</p>
-                <div class="discount-${data.discount}" class="0">
-                    <p>Nu 647,-</p>
-                    <p class="discount-tag-${data.discount}">28%</p>
+                <div class="discount" class="0">
+                    <p class="${!data.discount && "hide"}">Nu ${Math.floor(data.price - (data.price * data.discount) / 100)},-</p>
+                    <p class="${!data.discount && "hide"}">${data.discount}%</p>
                 </div>
                 <p>Inventory number: 1163</p>
                 <form>

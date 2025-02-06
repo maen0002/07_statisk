@@ -19,20 +19,20 @@ function showList(products) {
     .map(
       (product) =>
         `
-            <div class="produkt_card">
-                <a class="soldout${product.soldout}" href="produkt.html?product_id=${product.id}">
-                    <p class="soldout-tag${product.soldout}">Sold Out</p>
+            <article class="produkt_card">
+                <a class="${product.soldout && "soldout"}" href="produkt.html?product_id=${product.id}">
+                    <p class="${product.soldout ? "soldout-tag" : "hide"}">Sold Out</p>
                     <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="">
                 </a>
                 <h2>${product.productdisplayname}</h2>
                 <p>${product.articletype} / ${product.brandname}</p>
                 <p class="price">${product.price},-</p>
-                <div class="discount">
-                    <p class="${product.discount}">Nu ${product.price},-</p>
-                    <p class="discount-tag ${product.discount}">${product.discount}%</p>
+                <div class="${!product.discount && "hide"} ${product.discount && "discount"}">
+                    <p>Nu ${Math.floor(product.price - (product.price * product.discount) / 100)},-</p>
+                    <p class="discount-tag ${!product.discount && "hide"}">${product.discount}%</p>
                 </div>
                 <a href="produkt.html" class="bottom_link">Læs mere</a>
-            </div>
+            </article>
         `
     )
     .join("");
